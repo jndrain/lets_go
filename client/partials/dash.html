@@ -1,0 +1,25 @@
+<div ng-controller="sessionController">	
+	<input type="submit" value="Logout" ng-click="logout(user)">
+	<h3>Hi, {{user}}!</h3>
+</div>
+
+<div ng-controller="pollController">
+	<a href="#/create">Create a New Poll</a>
+	<h2>Current Polls:</h2>
+	<input type="text" placeholder="Search">
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Survey Question</th>
+				<th>Date Posted</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tr ng-repeat="q in questions">
+			<td>{{q.asker}}</td>
+			<td><a href="#/poll/{{q._id}}">{{q._id}}</a></td>
+			<td>{{q.createdAt}}</td>
+		</tr>
+	</table>
+</div>
